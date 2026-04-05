@@ -1,0 +1,98 @@
+#:kivy 2.3.1
+#:import utils kivy.utils
+
+<SettingsScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 80
+        spacing: 10
+
+        Label:
+            text: "Settings"
+            color: (0, 0, 0, 1)
+            font_size: "40sp"
+            size_hint: (1, None)
+            height: "90dp"
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+
+        ScrollView:
+            do_scroll_x: False
+
+            GridLayout:
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 8
+                padding: (0, 0, 0, 10)
+
+                SettingsRow:
+                    title: "Profile"
+                    subtitle: "View and update your account details"
+
+                SettingsRow:
+                    title: "Notifications"
+                    subtitle: "Reminder and alert preferences"
+
+                SettingsRow:
+                    title: "Theme"
+                    subtitle: "Light mode, dark mode, and display options"
+
+                SettingsRow:
+                    title: "Plant Preferences"
+                    subtitle: "Default plant settings and care options"
+
+                SettingsRow:
+                    title: "Help & Support"
+                    subtitle: "FAQ, contact, and troubleshooting"
+
+                SettingsRow:
+                    title: "About"
+                    subtitle: "GreenThumb version and app information"
+
+
+<SettingsRow>:
+    size_hint_y: None
+    height: "86dp"
+    padding: 12
+    spacing: 10
+
+    canvas.before:
+        Color:
+            rgba: utils.get_color_from_hex("#EDEDED")
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [18]
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: 2
+
+        Label:
+            text: root.title
+            color: utils.get_color_from_hex("#111111")
+            font_size: "22sp"
+            bold: True
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+
+        Label:
+            text: root.subtitle
+            color: utils.get_color_from_hex("#5A5A5A")
+            font_size: "14sp"
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+
+    Label:
+        text: ">"
+        size_hint_x: None
+        width: "25dp"
+        color: utils.get_color_from_hex("#7A7A7A")
+        font_size: "24sp"
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
