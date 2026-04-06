@@ -3,6 +3,8 @@ from kivy.lang.builder import Builder
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.image import Image
 from screens.home_screen import HomeScreen
+from screens.add_plant_screen import AddPlantScreen
+#from screens.plant_detail_screen import PlantDetailScreen
 from screens.settings_screen import SettingsScreen
 from kivy.properties import BooleanProperty, StringProperty
 
