@@ -9,7 +9,7 @@
     BoxLayout:
         orientation: 'horizontal'
         size_hint: (1, None)
-        height: '113sp'
+        height: '100sp'
     
         canvas.before:
             Color: 
@@ -25,11 +25,11 @@
             height: self.height
             width: '327sp'
     
-    #-----------------Navigation Bar--------------------
+    #-----------------Navigation Pathway Bar--------------------
     BoxLayout:
         padding: (4)
         size_hint: (1, None)
-        height: '39sp'
+        height: '50sp'
 
         Label:
             text: root.navigation_text
@@ -65,7 +65,7 @@
         
         
     
-    #-----------------Tool Bar--------------------    
+    #-----------------Navigation Bar--------------------    
     BoxLayout:
         size_hint: (1, None)
         height: '67sp'
@@ -95,14 +95,14 @@
                 on_press: root.change_screen('add_plant') if root.is_home else root.change_screen('home')
 
         BoxLayout:
-            size_hint: (None, 1)
+            size_hint: (None, 0.5)
             width: '62sp'
 
             Widget:
                 size_hint_x: 1
 
             ImageButton:
-                size_hint: (None, 1)
+                size_hint: (None, 0.5)
                 width: '50sp'
                 source: app.base_path + '/resources/images/settings_icon.png'
                 on_press: root.change_screen('settings')
